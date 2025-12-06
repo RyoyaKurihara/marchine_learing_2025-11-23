@@ -13,5 +13,4 @@ df3 = df2.drop(no, axis=0)
 x = df3[['SNS1','SNS2','actor','original']] #特徴量
 t = df3['sales'] #正解データ
 
-jmgslk;osjmdfl,.;;.ffjm
 
