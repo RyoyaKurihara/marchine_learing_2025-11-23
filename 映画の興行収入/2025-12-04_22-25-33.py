@@ -14,3 +14,4 @@ x = df3[['SNS1','SNS2','actor','original']] #特徴量
 t = df3['sales'] #正解データ
 
 
+x
