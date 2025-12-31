@@ -5,6 +5,7 @@
 		"dropna",
 		"dtype",
 		"fillna",
+		"Pclass",
 		"scikit",
 		"sklearn",
 		"Spyder"

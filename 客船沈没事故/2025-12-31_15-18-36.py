@@ -1,11 +1,8 @@
 
 # ピポットテーブルによる集計
 # 
-# データの欠損値を埋めるときに、データの分布に影響がないように穴埋めするために
-# 列の値ごとに穴埋めする値を分けること。
-#
-# `基準軸`: グループに分ける際の基準とする列。
-
+# グループに分けして穴埋めしたあとの出力はデフォルトでは平均値。
+# オプションで最大値にも変えられる。
 
 
 def learn(x,t,depth=3):
@@ -27,16 +24,12 @@ df2 = pd.read_csv('./Survived.csv')
 df2.groupby('Survived')['Age'].mean()
 df2.groupby('Pclass')['Age'].mean()
 
-pd.pivot_table(df2,index = 'Survived',columns = 'Pclass', values = 'Age')
-
+pd.pivot_table(df2,index = 'Survived',columns = 'Pclass', values = 'Age',aggfunc='max')
 
 '''
-Out[3]: 
-Pclass            1          2          3
-Survived                                 
-0         43.695312  33.544444  26.555556
-1         35.368197  25.901566  20.646118
+Out[2]: 
+Pclass       1     2     3
+Survived                  
+0         71.0  70.0  74.0
+1         80.0  62.0  63.0
 '''
-
-
-
